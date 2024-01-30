@@ -1,4 +1,4 @@
-import { TextField, Button } from '@mui/material';
+import { TextField, Button } from "@mui/material";
 
 const Auth = ({ changeMode }:{changeMode:any}) => {
     return (
@@ -14,12 +14,22 @@ const Auth = ({ changeMode }:{changeMode:any}) => {
                     Sign Up
                 </span>
             </div>
+        <div className="modal__inputs">
+            <TextField label="Username" variant="filled" fullWidth />
+            <TextField label="Password" variant="filled" fullWidth />
+        </div>
 
-            <Button className="modal__button" variant="contained" fullWidth>
-                Log In
-            </Button>
-        </>
-    );
-};
+        <div className="modal__link-wrap">
+            New to Reddit?{' '}
+            <span onClick={changeMode} className="modal__link">
+                Sign Up
+            </span>
+        </div>
+
+        <Button className="modal__button" variant="contained" fullWidth>
+            Log In
+        </Button>
+    </> );
+}
 
 export default Auth;

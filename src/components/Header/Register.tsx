@@ -21,5 +21,5 @@ const Register = ({ changeMode }:{changeMode:any}) => {
         </>
     );
 };
-
 export default Register;
+

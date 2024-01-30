@@ -1,10 +1,9 @@
-import { Button, IconButton, Dialog, Modal, TextField } from '@mui/material';
+import { Button, IconButton, Dialog, TextField, dividerClasses, Tooltip } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { useState } from 'react';
-import './Header.scss';
-import Auth from './Auth';
+import './header.scss';
 import Register from './Register';
-
+import Auth from './Auth';
 const Header = () => {
     const [open, setOpen] = useState(false);
     const [isReg, setIsReg] = useState(true);
@@ -12,7 +11,6 @@ const Header = () => {
     const onOpen = () => {
         setOpen(true);
     };
-
     const onClose = () => {
         setOpen(false);
     };
@@ -23,24 +21,26 @@ const Header = () => {
 
     return (
         <header className="header">
-            <div className="logo">
-                <img src="/icons/reddit-icon-svgrepo-com.svg" alt="logo" className="logo__main-icon" />
-                <span>Reddit</span>
-            </div>
-            <div className="search-wrapper">
-                <img src="/icons/search-svgrepo-com.svg" alt="search" className="search-icon" />
-                <input type="text" placeholder="Search Reddit" className="header__search" />
+            <Tooltip title="Go to Reddit Home" arrow className="header__tooltip">
+                <div className="logo">
+                    <img className="logo__img" src={require('./logo.png')} />
+                    <img className="logo__img-wordmark" src={require('./wordmark.png')} />
+                </div>
+            </Tooltip>
+            <div className="header__input">
+                <input className="input" type="text" placeholder="Search Reddit" />
             </div>
             <div className="actions">
-                <img className="actions__qr-icon" src="/icons/qr-code-scan-svgrepo-com.svg" alt="" />
-                <Button className="actions__getapp-btn" variant="contained">
-                    Get app
+                <Button className="actions__app-btn btn" variant="contained">
+                    <img className="actions__app-img" src={require('./qr.png')} />
+                    <div>Get app</div>
                 </Button>
-                <Button className="actions__login-btn" onClick={onOpen} variant="contained">
-                    log in
+                <Button className="actions__login-btn btn" onClick={onOpen} variant="contained">
+                    Log in
                 </Button>
-                <IconButton>
-                    <MoreHorizIcon className="actions__horiz-btn" />
+                <IconButton className="actions__icon-btn btn">
+                    {' '}
+                    <MoreHorizIcon />{' '}
                 </IconButton>
                 <Dialog className="modal" open={open} onClose={onClose}>
                     <div className="modal__wrap">{isReg ? <Auth changeMode={changeMode} /> : <Register changeMode={changeMode} />}</div>
