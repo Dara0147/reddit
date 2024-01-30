@@ -1,6 +1,6 @@
 import { TextField, Button } from '@mui/material';
 
-const Auth = ({ changeMode }) => {
+const Auth = ({ changeMode }:{changeMode:any}) => {
     return (
         <>
             <h2 className="modal__title">Log In</h2>

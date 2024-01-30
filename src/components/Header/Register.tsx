@@ -1,6 +1,6 @@
 import { TextField, Button } from '@mui/material';
 
-const Register = ({ changeMode }) => {
+const Register = ({ changeMode }:{changeMode:any}) => {
     return (
         <>
             <h2 className="modal__title">Sign Up</h2>

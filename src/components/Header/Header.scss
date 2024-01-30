@@ -1,17 +1,110 @@
 .header {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	height: 57px;
+	padding: 0 8px;
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: rgb(224, 221, 221);
+
+	&__search {
+		position: relative;
+		padding: 0 25px;
+		width: 754px;
+		height: 40px;
+		border-radius: 15px;
+		background-color: #e7e6e6;
+		border: none;
+	}
 }
+
+.search-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.search-icon {
+	height: 16px;
+	position: absolute;
+	z-index: 10;
+	padding: 0 8px;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-weight: 700;
+	font-size: 22px;
+	color: #FF4500;
+	cursor: pointer;
+
+	&__main-icon {
+		height: 32px;
+		padding-right: 8px;
+	}
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+
+	&__qr-icon {
+		position: absolute;
+		z-index: 10;
+		padding-left: 5px;
+		height: 20px;
+	}
+
+	& &__getapp-btn {
+		position: relative;
+		background-color: #e7e6e6;
+		color: black;
+		width: 104px;
+		border-radius: 15px;
+		font-size: 14px;
+		text-transform: none;
+
+	}
+
+	& &__getapp-btn:hover {
+		background-color: #b6b4b4;
+	}
+
+	& &__login-btn {
+		background-color: #FF4500;
+		border-radius: 20px;
+	}
+
+	& &__login-btn:hover {
+		background-color: #b83100;
+	}
+
+	& &__horiz-btn {
+		border-radius: 50%;
+		padding: 3px;
+		height: 39px;
+		width: 39px;
+		transition: .3s;
+	}
+
+	& &__horiz-btn:hover {
+		background-color: rgb(174, 174, 174);
+	}
+}
+
 
 .modal {
 	&__wrap {
-		width: 528px;
 		padding: 24px 80px;
+		width: 528px;
 	}
 
 	&__title {
-		margin-bottom: 30px;
 		font-size: 24px;
+		margin-bottom: 30px;
 	}
 
 	&__inputs {
@@ -23,6 +116,7 @@
 	& &__button {
 		margin-top: 30px;
 	}
+
 	&__link {
 		color: #0045ac;
 		cursor: pointer;
@@ -30,5 +124,6 @@
 		&-wrap {
 			margin-top: 30px;
 		}
+
 	}
 }

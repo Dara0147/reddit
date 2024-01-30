@@ -24,17 +24,23 @@ const Header = () => {
     return (
         <header className="header">
             <div className="logo">
-                <img src="" alt="" />
-                <span>reddit</span>
+                <img src="/icons/reddit-icon-svgrepo-com.svg" alt="logo" className="logo__main-icon" />
+                <span>Reddit</span>
             </div>
-            <input type="text" placeholder="Search Reddit" />
+            <div className="search-wrapper">
+                <img src="/icons/search-svgrepo-com.svg" alt="search" className="search-icon" />
+                <input type="text" placeholder="Search Reddit" className="header__search" />
+            </div>
             <div className="actions">
-                <Button variant="contained">Get app</Button>
-                <Button onClick={onOpen} variant="contained">
-                    Log In
+                <img className="actions__qr-icon" src="/icons/qr-code-scan-svgrepo-com.svg" alt="" />
+                <Button className="actions__getapp-btn" variant="contained">
+                    Get app
+                </Button>
+                <Button className="actions__login-btn" onClick={onOpen} variant="contained">
+                    log in
                 </Button>
                 <IconButton>
-                    <MoreHorizIcon />
+                    <MoreHorizIcon className="actions__horiz-btn" />
                 </IconButton>
                 <Dialog className="modal" open={open} onClose={onClose}>
                     <div className="modal__wrap">{isReg ? <Auth changeMode={changeMode} /> : <Register changeMode={changeMode} />}</div>
